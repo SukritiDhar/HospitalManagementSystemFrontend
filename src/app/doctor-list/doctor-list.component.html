@@ -1,0 +1,26 @@
+<h2>Doctor List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Doctor Id</th>
+            <th>Doctor Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Specialist Field</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let doctor of doctors">
+            <td>{{doctor.drId}}</td>
+            <td>{{doctor.drName}}</td>
+            <td>{{doctor.age}}</td>
+            <td>{{doctor.gender}}</td>
+            <td>{{doctor.specialistField}}</td>
+            <td>
+                <button (click)= "updateDoctor(doctor.drId)" class="btn btn-info">Update</button>
+                <button (click)= "deleteDoctor(doctor.drId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Update Patient</h3>
+    <form (ngSubmit)= "onSubmit()">
+        <div class="form-group">
+            <label>Id</label>
+            <input type="number" class="form-control" id="ptId" [(ngModel)]= "patient.ptId" name="ptId">
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="ptName" [(ngModel)]= "patient.ptName" name="ptName">
+        </div>
+        <div class="form-group">
+            <label>Select Doctor</label>
+              <select class="form-control" id="visitedDoctor" [(ngModel)]= "patient.visitedDoctor" name="visitedDoctor">
+                  <option *ngFor= "let doctor of doctors">{{doctor.drName}}</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label>Date of Visit</label>
+            <input type="text" class="form-control" id="dateOfVisit" [(ngModel)]= "patient.dateOfVisit" name="dateOfVisit">
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    </div>

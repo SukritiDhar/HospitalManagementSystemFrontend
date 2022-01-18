@@ -1,0 +1,29 @@
+<h3>View Doctor Details</h3>
+<form (ngSubmit)= "onSubmit()" method="post">
+    <div class="form-group">
+        <label>Select Doctor</label>
+          <select class="form-control" id="visitedDoctor" [(ngModel)]= "doctor.drName" name="selectDoctor">
+              <option>Select</option>
+              <option *ngFor= "let dr of drs">{{dr.drName}}</option>
+          </select>
+    </div>
+    <br>
+    <button class="btn btn-success" type="submit">Search</button>
+</form>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Specialist Field</th>
+            <th>Number of Patient Attended</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="outputdoc">
+            <td>{{outputdoc.drName}}</td>
+            <td>{{outputdoc.specialistField}}</td>
+            <td>{{outputpat}}</td>
+        </tr>
+    </tbody>
+</table>

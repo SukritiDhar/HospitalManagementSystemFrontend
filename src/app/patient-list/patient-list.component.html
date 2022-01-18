@@ -1,0 +1,24 @@
+<h2>Patient List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Patient Id</th>
+            <th>Patient Name</th>
+            <th>Visited Doctor</th>
+            <th>Date of Visit</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let patient of patients">
+            <td>{{patient.ptId}}</td>
+            <td>{{patient.ptName}}</td>
+            <td>{{patient.visitedDoctor}}</td>
+            <td>{{patient.dateOfVisit}}</td>
+            <td>
+                <button (click)= "updatePatient(patient.ptId)" class="btn btn-info">Update</button>
+                <button (click)= "deletePatient(patient.ptId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
